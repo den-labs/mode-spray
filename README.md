@@ -58,21 +58,22 @@ Mode Spray is a powerful dApp designed to streamline the process of sending toke
 
 ## 🪙 Expanded Token Support
 
-![image](https://github.com/wolfcito/mode-spray/assets/791301/d0630f3e-51d4-47be-8ffb-ccb9c8c81b96)
+<img width="344" alt="image" src="https://github.com/user-attachments/assets/575ff165-ccb8-4ee4-a21c-ee77e45cc53c" />
 
 ## ERC20 tokens
 
-![image](https://github.com/wolfcito/mode-spray/assets/791301/4136b9df-a6de-422c-93a0-cbbc22819728)
+<img width="604" alt="image" src="https://github.com/user-attachments/assets/0811d376-77dd-40b6-ac5c-19a9c06a0b04" />
+
 
 ## Mainnet Integration
 
-![image](https://github.com/wolfcito/mode-spray/assets/791301/36d53db6-cf06-4159-ba2b-52d202080e30)
+<img width="453" alt="image" src="https://github.com/user-attachments/assets/ce8d12bd-5135-4038-b42a-d74aeb054039" />
+
 
 ## Push Notifications
 
-![image](https://github.com/wolfcito/mode-spray/assets/791301/e641be6c-dd72-45c5-8e32-766d2d3542a1)
+<img width="306" alt="image" src="https://github.com/user-attachments/assets/7fffb2d0-47fd-42be-afa3-110823ffb704" />
 
-![image](https://github.com/wolfcito/mode-spray/assets/791301/19ddecf2-d976-4044-9577-442a32edc9f7)
 
 ## 📜 Example of supported separators
 
