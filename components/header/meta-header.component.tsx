@@ -10,7 +10,9 @@ type MetaHeaderProps = {
 }
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
-const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}${basePath}/` : `${basePath}/`
+const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
+  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}${basePath}/`
+  : `${basePath}/`
 
 export const MetaHeader = ({
   title = 'Mode Spray',
