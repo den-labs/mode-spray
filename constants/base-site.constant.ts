@@ -4,8 +4,8 @@ import { enviroment } from '~~/config'
 export const baseSite = enviroment.debug
   ? 'http://localhost:3000'
   : enviroment.lab
-  ? 'https://lab.modespray.xyz'
-  : 'https://app.modespray.xyz'
+  ? 'https://modespray-lab.vercel.app'
+  : 'https://modespray-mainnet.vercel.app'
 
 export const labelSite = enviroment.lab ? 'Spray Laboratory' : 'Spray Production'
 
@@ -13,7 +13,7 @@ export const labelSite = enviroment.lab ? 'Spray Laboratory' : 'Spray Production
 export const baseSiteLink = enviroment.debug
   ? 'http://localhost:3000'
   : enviroment.lab
-  ? 'https://app.modespray.xyz'
-  : 'https://lab.modespray.xyz'
+  ? 'https://modespray-mainnet.vercel.app'
+  : 'https://modespray-lab.vercel.app'
 
 export const labeSiteLink = enviroment.lab ? 'Spray Production' : 'Spray Laboratory'
