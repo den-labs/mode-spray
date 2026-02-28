@@ -9,7 +9,8 @@ type MetaHeaderProps = {
   children?: React.ReactNode
 }
 
-const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/` : '/'
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}${basePath}/` : `${basePath}/`
 
 export const MetaHeader = ({
   title = 'Mode Spray',
@@ -43,7 +44,7 @@ export const MetaHeader = ({
         </>
       )}
       {twitterCard && <meta name="twitter:card" content={twitterCard} />}
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href={`${basePath}/favicon.png`} />
       {children}
     </Head>
   )

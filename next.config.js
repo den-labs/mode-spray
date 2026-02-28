@@ -1,8 +1,14 @@
 // @ts-check
 
+const basePath = process.env.BASE_PATH || ''
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath,
   reactStrictMode: true,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   typescript: {
     ignoreBuildErrors: process.env.NEXT_PUBLIC_IGNORE_BUILD_ERROR === 'true',
   },
