@@ -1,11 +1,15 @@
 import React, { useCallback, useRef, useState } from 'react'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 import { HeaderMenuLinks } from './header-menu-links.component'
 import { Bars3Icon } from '@heroicons/react/24/outline'
-import { FaucetButton, RainbowKitCustomConnectButton } from '~~/components/scaffold-eth'
 import { useOutsideClick } from '~~/hooks/scaffold-eth'
 import sprayIcon from '~~/public/favicon.png'
+
+const WalletControls = dynamic(() => import('./wallet-controls.component').then(module => module.WalletControls), {
+  ssr: false,
+})
 
 export function Header() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -52,8 +56,7 @@ export function Header() {
         </Link>
       </div>
       <div className="flex-grow mr-4 navbar-end">
-        <RainbowKitCustomConnectButton />
-        <FaucetButton />
+        <WalletControls />
       </div>
     </div>
   )

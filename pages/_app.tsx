@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import type { AppProps } from 'next/app'
 import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit'
 import '@rainbow-me/rainbowkit/styles.css'
@@ -44,18 +44,28 @@ const ScaffoldEthApp = ({ Component, pageProps }: AppProps) => {
 }
 
 const ScaffoldEthAppWithProviders = (props: AppProps) => {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   return (
     <WagmiConfig config={wagmiConfig}>
       <NextNProgress />
-      <RainbowKitProvider
-        chains={appChains.chains}
-        avatar={BlockieAvatar}
-        theme={darkTheme()}
-        modalSize="compact"
-        initialChain={appChains.chains[1]}
-      >
+      {isClient ? (
+        <RainbowKitProvider
+          chains={appChains.chains}
+          avatar={BlockieAvatar}
+          theme={darkTheme()}
+          modalSize="compact"
+          initialChain={appChains.chains[1]}
+        >
+          <ScaffoldEthApp {...props} />
+        </RainbowKitProvider>
+      ) : (
         <ScaffoldEthApp {...props} />
-      </RainbowKitProvider>
+      )}
     </WagmiConfig>
   )
 }
