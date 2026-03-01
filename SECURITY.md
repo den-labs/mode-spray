@@ -5,7 +5,7 @@ At ModeSpray, we take security seriously and are committed to protecting our use
 ## 📢 Reporting Security Issues  
 If you believe you have found a security vulnerability in ModeSpray, we encourage you to report it as soon as possible.
 
-- **How to report**: Please create a **GitHub Issue** in our repository: [**GitHub repo link**]([https://github.com/wolfcito/mode-spray/issues/new?template=Blank+issue](https://github.com/wolfcito/mode-spray)).
+- **How to report**: Please create a **GitHub Issue** in our repository: [**GitHub repo link**](https://github.com/den-labs/mode-spray/issues/new?template=Blank+issue).
 - **What to include in your report**:  
   - A clear explanation of the vulnerability.  
   - Steps to reproduce the issue.  

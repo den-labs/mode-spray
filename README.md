@@ -29,7 +29,7 @@ Mode Spray is a powerful dApp designed to streamline the process of sending toke
 **Mode Spray 2.0 Introduction:**
 
 - Users can contribute to improvement on GitHub.
-- Repository link: https://github.com/wolfcito/mode-spray.
+- Repository link: https://github.com/den-labs/mode-spray.
 
 **Mainnet Integration:**
 
