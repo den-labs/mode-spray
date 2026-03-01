@@ -16,7 +16,11 @@ import '~~/styles/globals.css'
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
-const ScaffoldEthApp = ({ Component, pageProps }: AppProps) => {
+type ScaffoldEthAppProps = AppProps & {
+  enableWalletControls?: boolean
+}
+
+const ScaffoldEthApp = ({ Component, pageProps, enableWalletControls = true }: ScaffoldEthAppProps) => {
   const price = useNativeCurrencyPrice()
   const setNativeCurrencyPrice = useGlobalState(state => state.setNativeCurrencyPrice)
 
@@ -32,7 +36,7 @@ const ScaffoldEthApp = ({ Component, pageProps }: AppProps) => {
         className="flex flex-col min-h-screen font-ibm-sans bg-repeat"
         style={{ backgroundImage: `url('${basePath}/grid-molecule.png')` }}
       >
-        <Header />
+        <Header enableWalletControls={enableWalletControls} />
         <main className="relative flex flex-col flex-1">
           <Component {...pageProps} />
         </main>
@@ -64,7 +68,7 @@ const ScaffoldEthAppWithProviders = (props: AppProps) => {
           <ScaffoldEthApp {...props} />
         </RainbowKitProvider>
       ) : (
-        <ScaffoldEthApp {...props} />
+        <ScaffoldEthApp {...props} enableWalletControls={false} />
       )}
     </WagmiConfig>
   )
