@@ -15,6 +15,8 @@ import { appChains } from '~~/services/web3/wagmiConnectors'
 import '~~/styles/globals.css'
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+const canonicalAppUrl = 'https://modespray.vercel.app/app'
+const legacyHosts = new Set(['modespray.xyz', 'www.modespray.xyz', 'app.modespray.xyz'])
 
 type ScaffoldEthAppProps = AppProps & {
   enableWalletControls?: boolean
@@ -23,6 +25,7 @@ type ScaffoldEthAppProps = AppProps & {
 const ScaffoldEthApp = ({ Component, pageProps, enableWalletControls = true }: ScaffoldEthAppProps) => {
   const price = useNativeCurrencyPrice()
   const setNativeCurrencyPrice = useGlobalState(state => state.setNativeCurrencyPrice)
+  const [showLegacyBanner, setShowLegacyBanner] = useState(false)
 
   useEffect(() => {
     if (price > 0) {
@@ -30,12 +33,27 @@ const ScaffoldEthApp = ({ Component, pageProps, enableWalletControls = true }: S
     }
   }, [setNativeCurrencyPrice, price])
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setShowLegacyBanner(legacyHosts.has(window.location.hostname))
+    }
+  }, [])
+
   return (
     <>
       <div
         className="flex flex-col min-h-screen font-ibm-sans bg-repeat"
         style={{ backgroundImage: `url('${basePath}/grid-molecule.png')` }}
       >
+        {showLegacyBanner ? (
+          <div className="px-4 py-2 text-xs text-center border-b bg-mode/10 border-mode/40 text-neutral-content">
+            New official link:{' '}
+            <a href={canonicalAppUrl} className="font-semibold underline underline-offset-4">
+              modespray.vercel.app/app
+            </a>
+            . We are no longer maintaining `modespray.xyz`.
+          </div>
+        ) : null}
         <Header enableWalletControls={enableWalletControls} />
         <main className="relative flex flex-col flex-1">
           <Component {...pageProps} />
