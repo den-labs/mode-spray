@@ -2,8 +2,6 @@
 
 const basePath = process.env.BASE_PATH || ''
 
-console.log(`[next.config] BASE_PATH=${basePath || '(empty)'}`)
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath,
